@@ -9,7 +9,7 @@ function createLoginTracker(userInfo) {
   }
   if (passwordAttempt === userInfo.password && attemptCount <= 3) {
     return "Login successful";
-  } else {
+  } else if (passwordAttempt !== userInfo.password && attemptCount <=3) {
     return "Login failed";
   }
 }
@@ -19,3 +19,4 @@ module.exports = {
   ...(typeof createLoginTracker !== 'undefined' && { createLoginTracker })
 
 };
+
